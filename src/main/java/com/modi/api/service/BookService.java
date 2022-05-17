@@ -1,16 +1,17 @@
 package com.modi.api.service;
 
-import com.modi.api.model.Book;
+import java.util.List;
+import java.util.Optional;
 
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import com.modi.api.model.Book;
 
 public interface BookService {
 
-	Mono<Book> getBook(long id);
+	Optional<Book> getBook(String id);
 
-	Flux<Book> getAllBooks();
+	List<Book> getAllBooks();
 
-	Mono<Book> addBook(Book book);
+	Book addBook(Book book);
 
+	void deleteBook(String id);
 }
